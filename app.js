@@ -100,9 +100,9 @@ app.get("/directors/", async (request, response) => {
     `;
   const directorsArray = await database.all(getDirectors);
   response.send(
-    directorsArray.map((eachDirector) => {
-      convertDirectorDbObjectToResponseObject(eachDirector);
-    })
+    directorsArray.map((eachDirector) => 
+      convertDirectorDbObjectToResponseObject(eachDirector)
+    )
   );
 });
 app.get("/directors/:directorId/movies/", async (request, response) => {
